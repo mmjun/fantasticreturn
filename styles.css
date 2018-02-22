@@ -1,0 +1,12 @@
+.bg {
+  background-size: cover;
+}
+
+.white div {
+  width: 500px;
+  height:600px;
+}
+
+.white-bg {
+  background-color:white;
+}
