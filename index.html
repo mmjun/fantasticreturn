@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="styles.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
-  <body background="bgimage.png" class="bg">>
-
-    <div align="center" class="white">
-
-      <!-- <div class="white">
-        <div class="white-bg">DIV 1</div>
-        <div class="hifis">DIV2</div>
-      </div> -->
-
-      <div class="white-bg">
-
-          <img style="padding:35px 0px 0px 9px;" src="6625_fantasticfawn_logo.jpg" width="400">
-          <h1>
-            Return Form
-          </h1>
-          <br>
-          <!-- <a href="https://www.google.com">Hola Mundo!</a> -->
-
-        <form style="padding:0px 0px 0px 35px;" align="left">
-          Company Name: <input type="text" placeholder="Fantastic Fawn">
-          <br>
-          <br>
-          Invoice #: <input type="text" placeholder="500123">
-          <br>
-          Email Address: <input type="text" placeholder="customer@fantasticfawn.com" size="50px">
-          <br>
-          Reason for Return: <input type="radio" placeholder="Please explain with as much detail as possible as to why you are returning your order. Example: I ordered style KT2084 but I received the wrong style of KT2062T" style"width: 100px;">
-          Return for Store Credit
-        </form>
-
-        <button type="button">Submit!</button>
-      </div>
+  <body background="bgimage.jpg" class="bg">
+    <div align="center">
+      <div class="white-bg" align="center">
+          <img style="padding:35px 0px 30px 9px;" src="6625_fantasticfawn_logo.jpg" width="400">
+          <form id="gform" method="POST" class="pure-form pure-form-stacked" data-email="example@email.net" action="https://script.google.com/a/fantasticfawn.com/macros/s/AKfycbyn6LlD5NsKslzzgzRzDbFAH6W1NY8-EilH9dNP2cMqipWdRDY/exec">
+            <h1>Return Form</h1>
+            <br>
+            <fieldset class="pure-group">
+              <label for="coName"><strong>Company Name</strong></label>
+              <input id="coName" name="Company Name" placeholder="Fantastic Fawn" />
+            </fieldset>
+            <fieldset class="pure-group">
+              <label for="email"><strong><em>Your</em> Email Address</strong></label>
+              <input id="email" name="email" type="email" required placeholder="customer@fantasticfawn.com"/>
+              <span id="email-invalid" style="display:none">Must be a valid email address</span>
+            </fieldset>
+            <fieldset class="pure-group">
+              <label for="inNumber"><strong>Invoice Number</strong></label>
+              <input id="inNumber" type="number" name="Invoice Number" placeholder="500123" min="500000"/>
+            </fieldset>
+            <fieldset class="pure-group">
+              <label for="rtReason"><strong>Return Reason</strong></label>
+              <select id="rtReason" name="Return Reason">
+                <option>Return for Store Credit</option>
+                <option>Exchange for Different Style</option>
+                <option>Received Wrong Style</option>
+                <option>Item Never Received</option>
+                <option>Damaged Item</option>
+              </select>
+            </fieldset>
+            <br>
+            <button type="submit" class="btn" id="submitButton"><i class="fa fa-paper-plane"></i>&nbsp;Submit</button>
+          </form>
+    <div style="display:none;" id="thankyou_message">
+      <h2 class="thankyou">Thanks for contacting us!
+        <br>We will get back to you soon!
+      </h2>
     </div>
+  </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <script src="app-3.js"></script>
   </body>
-
-
 </html>
