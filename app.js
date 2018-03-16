@@ -72,20 +72,22 @@ function handleFormSubmit(event) {
     var cName = $('#coName').val();
     var iNumber = $('#inNumber').val();
     var eMail = $('#email').val();
-    var rTurn = $('#rtReason').find(':selected').text();
+    var rReason = $('#rtReason').find(':selected').text();
+    var rExplain = $('#reasonArea').val();
 
     firebase.database().ref('returns').push({
       company: cName,
       invoice: iNumber,
       email: eMail,
-      return: rTurn
+      return: rReason,
+      reason: rExplain
     });
     xhr.open('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
-        console.log('button was pushed')
-        console.log( xhr.status, xhr.statusText )
-        console.log(xhr.responseText);
+        //console.log('button was pushed')
+        //console.log( xhr.status, xhr.statusText )
+        //console.log(xhr.responseText);
         document.getElementById('gform').style.display = 'none';
         document.getElementById('thankyou_message').style.display = 'block';
         return;
